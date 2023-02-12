@@ -4,11 +4,24 @@ import { FaUserAlt } from "react-icons/fa";
 import { MdEventAvailable } from "react-icons/md";
 import { TbDots} from "react-icons/tb";
 import { IoIosArrowDown} from "react-icons/io";
+import { FiEdit} from "react-icons/fi";
 
 const Profile = () => {
-  const [dropDown, setDropdown] = useState(true)
+  const [dropDown, setDropdown] = useState(true);
+  const [openForm, setOpenForm] = useState(true);
+  const [Tagline, setTagline] = useState('')
+  
   const handleDropDown = () => {
     setDropdown(!dropDown);
+  }
+  const handleToSubmit = (e) => {
+    const Tag = e.target.tag.value;
+    setTagline(Tag);
+    e.preventDefault();
+    setOpenForm(!openForm);
+  }
+  const handleToCancel = () => {
+    setOpenForm(!openForm);
   }
   return (
     <div className="bg-gray-200  rounded  md:mt-12 md:mx-20 md:p-4">
@@ -25,11 +38,20 @@ const Profile = () => {
             <h1 className="text-center md:text-left text-3xl text-gray-800 font-serif font-bold">
               User Name
             </h1>
-            <h4 className="text-center mb-4 md:text-left text-xl text-gray-800 font-serif ">
-              Frontend Developer
+            <h4 className={`text-center  mb-4 md:text-left text-xl text-gray-800 font-serif ${!openForm ?"hidden":""}`}>
+              {Tagline.length > 1 ? Tagline : "Input your Experiance " } <FiEdit onClick={()=>setOpenForm(!openForm)} className="inline mx-3 text-gray-500 cursor-pointer hover:text-gray-700"></FiEdit>
             </h4>
-            <div className="flex justify-center">
-                <button className=" p-2 md:mt-6 border-2 border-gray-500 rounded font-serif text-gray-700 hover:text-white hover:bg-slate-700 duration-300">
+            <form onSubmit={handleToSubmit} className={`mx-6 mb-6 md:mx-0 ${openForm ? "hidden":""}`}>
+              <div className="mt-2">
+                <input className="w-full px-2 rounded mb-2 py-1 " type="text" name="tag" />
+              </div>
+              <div  className='flex justify-between mb-2 '>
+                  <button onClick={handleToCancel} type="reset"  className='rounded w-full mr-2 px-2 py-1 bg-slate-400 font-semibold text-white'>Cancel</button>
+                  <button type='submit' className="rounded w-full ml-2 px-2 py-1 bg-green-700 font-semibold text-white disabled:bg-green-400">Update</button>
+              </div>
+            </form>
+            <div className="flex justify-center md:justify-start">
+                <button className=" p-2  border-2 border-gray-500 rounded font-serif text-gray-700 hover:text-white hover:bg-slate-700 duration-300">
               Preview Creativeator Profile
             </button>
             </div>

@@ -7,7 +7,7 @@ import Certification from './Certification';
 
 const Info = () => {
     return (
-        <div className='grid md:grid-cols-3 md:mt-12 md:mx-20 '>
+        <div className='grid md:grid-cols-2 md:mt-12 md:mx-20 lg:grid-cols-3'>
             <div className='bg-gray-200 col-span-1 rounded p-6'> {/*left side Profile info*/}
                 <Description></Description>
                 <Language></Language>

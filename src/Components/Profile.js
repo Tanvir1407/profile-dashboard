@@ -25,11 +25,11 @@ const Profile = () => {
   }
   return (
     <div className="bg-gray-200  rounded  md:mt-12 md:mx-20 md:p-4">
-      <div className="md:flex md:justify-between">
-        <div className="md:flex md:items-center ">{/*profile left side*/}
+      <div className="lg:flex lg:justify-between">
+        <div className="md:flex md:items-center md:mb-20">{/*profile left side*/}
           <div>
             <img
-              className="mx-auto p-4 h-60 w-60 rounded-full md:p-0  "
+              className="mx-auto p-4 h-60 w-60 md:h-52 md:w-52 rounded-full md:p-0  "
               src="https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg"
               alt="user"
             />
@@ -39,7 +39,7 @@ const Profile = () => {
               User Name
             </h1>
             <h4 className={`text-center  mb-4 md:text-left text-xl text-gray-800 font-serif ${!openForm ?"hidden":""}`}>
-              {Tagline.length > 1 ? Tagline : "Input your Experiance " } <FiEdit onClick={()=>setOpenForm(!openForm)} className="inline mx-3 text-gray-500 cursor-pointer hover:text-gray-700"></FiEdit>
+              {Tagline.length > 1 ? Tagline : "Input your Experience " } <FiEdit onClick={()=>setOpenForm(!openForm)} className="inline mx-3 text-gray-500 cursor-pointer hover:text-gray-700"></FiEdit>
             </h4>
             <form onSubmit={handleToSubmit} className={`mx-6 mb-6 md:mx-0 ${openForm ? "hidden":""}`}>
               <div className="mt-2">
@@ -57,7 +57,7 @@ const Profile = () => {
             </div>
           </div>
         </div>
-        <div className="md:p-4 md:mt-0 w-80 mt-10  mx-auto"> {/*profile right side*/}
+        <div className="md:p-4 md:mt-0 w-80 md:w-96 mt-10  mx-auto"> {/*profile right side*/}
           <div className="flex justify-between w-80 py-3 ">
             <div className="flex items-center">
               <IoLocationSharp className="text-gray-600"></IoLocationSharp>
@@ -86,16 +86,16 @@ const Profile = () => {
     <div className="mt-4 border-t border-gray-400 pt-4 ">       
       <div  className="hidden md:flex justify-between items-center">{/*link button for large device*/}
         <div> 
-          <button className="py-2 px-4 font-semibold text-gray-700 text-lg mx-4 hover:bg-slate-600 duration-300 rounded hover:text-white">
+          <button className="mx-1 p-1 lg:py-2 lg:px-4 font-semibold text-gray-600 text-md lg:text-lg lg:mx-4 hover:border border-gray-700 duration-300 rounded ">
             Dashboard
           </button>
-          <button className="py-2 px-4 font-semibold text-gray-700 text-lg mx-4 hover:bg-slate-600 duration-300 rounded hover:text-white">
+          <button className="mx-1 p-1 lg:py-2 lg:px-4 font-semibold text-gray-600 text-md lg:text-lg lg:mx-4 hover:border border-gray-700 duration-300 rounded ">
             My Business
           </button>
-          <button className="py-2 px-4 font-semibold text-gray-700 text-lg mx-4 hover:bg-slate-600 duration-300 rounded hover:text-white">
+          <button className="mx-1 p-1 lg:py-2 lg:px-4 font-semibold text-gray-600 text-md lg:text-lg lg:mx-4 hover:border border-gray-700 duration-300 rounded ">
             Growth and Marketing
           </button>
-          <button className="py-2 px-4 font-semibold text-gray-700 text-lg mx-4 hover:bg-slate-600 duration-300 rounded hover:text-white">
+          <button className="mx-1 p-1 lg:py-2 lg:px-4 font-semibold text-gray-600 text-md lg:text-lg lg:mx-4 hover:border border-gray-700 duration-300 rounded ">
             Analytics
           </button>
         </div>
